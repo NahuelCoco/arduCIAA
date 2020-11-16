@@ -1,0 +1,12 @@
+rgu_18xx_43xx.h:119:20:Chip_RGU_TriggerReset	16	static
+rgu_18xx_43xx.h:130:20:Chip_RGU_InReset	16	static
+enet_18xx_43xx.h:458:20:Chip_ENET_Reset	16	static
+enet_18xx_43xx.c:49:20:reset	16	static
+enet_18xx_43xx.c:59:17:Chip_ENET_CalcMDCClock	16	static
+enet_18xx_43xx.c:87:6:Chip_ENET_Init	16	static
+enet_18xx_43xx.c:123:6:Chip_ENET_DeInit	16	static
+enet_18xx_43xx.c:138:6:Chip_ENET_SetupMII	24	static
+enet_18xx_43xx.c:145:6:Chip_ENET_StartMIIWrite	16	static
+enet_18xx_43xx.c:154:6:Chip_ENET_StartMIIRead	16	static
+enet_18xx_43xx.c:162:6:Chip_ENET_SetDuplex	16	static
+enet_18xx_43xx.c:173:6:Chip_ENET_SetSpeed	16	static

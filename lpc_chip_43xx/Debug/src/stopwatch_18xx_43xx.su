@@ -1,0 +1,10 @@
+timer_18xx_43xx.h:159:20:Chip_TIMER_Enable	16	static
+timer_18xx_43xx.h:181:24:Chip_TIMER_ReadCount	16	static
+timer_18xx_43xx.h:204:20:Chip_TIMER_PrescaleSet	16	static
+stopwatch_18xx_43xx.c:57:6:StopWatch_Init	16	static
+stopwatch_18xx_43xx.c:72:10:StopWatch_Start	8	static
+stopwatch_18xx_43xx.c:79:10:StopWatch_TicksPerSecond	4	static
+stopwatch_18xx_43xx.c:85:10:StopWatch_TicksToMs	16	static
+stopwatch_18xx_43xx.c:91:10:StopWatch_TicksToUs	16	static
+stopwatch_18xx_43xx.c:97:10:StopWatch_MsToTicks	16	static
+stopwatch_18xx_43xx.c:103:10:StopWatch_UsToTicks	16	static

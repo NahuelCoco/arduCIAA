@@ -1,6 +1,45 @@
 #include "coco_timer.h"
 #include "coco_gpio.h"
 
+bool flagTimer = false;
+
+/*
+ * Libreria en proceso. Solo utilizar función delay
+ */
+
+/*
+ * Función:			void initTimer ( void )
+ *
+ * Uso:				Con esta función inicializaremos el timer 0.
+ *
+ * Return:			No hay retorno.
+ *
+ * Parámetros:		No necesita parámetros.
+ *
+ */
+
+void initTimer ( void )
+{
+	Chip_TIMER_Init(LPC_TIMER0);
+	Chip_TIMER_Reset(LPC_TIMER0);
+}
+
+extern "C"
+{
+	void TIMER0_IRQHandler(void)
+	{
+
+		if(Chip_TIMER_MatchPending(LPC_TIMER0, 0))
+		{
+
+			Chip_TIMER_ClearMatch(LPC_TIMER0, 0);
+			flagTimer = true;
+
+		}
+
+	}
+}
+
 /*
  * Libreria en proceso. Solo utilizar función delay
  */
@@ -18,61 +57,53 @@
 
 bool delay ( long timeMS )
 {
+	bool rtrn = false;
+	uint32_t aux = SystemCoreClock/1000; //Se divide por 1000 para que sea milisegundos
+	timeMS = timeMS*aux;
 
+	Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timeMS));
+	Chip_TIMER_MatchEnableInt(LPC_TIMER0, 0);
+	Chip_TIMER_ResetOnMatchEnable(LPC_TIMER0, 0);
+	Chip_TIMER_Enable(LPC_TIMER0);
+	NVIC_ClearPendingIRQ(TIMER0_IRQn);
+	NVIC_EnableIRQ(TIMER0_IRQn);
 
-	bool val = false;
-	//Los siguientes registros se pueden leer en el datasheet o desde la libreria chip.h
-	//Leemos el valor de clock seteado en SystemCoreClock
-	SystemCoreClockUpdate();
-	//Reseteamos el Time Control Register del Timer 0
-    LPC_TIMER0->TCR = 0x02;
-    //Seteamos el preescaler en 0
-    LPC_TIMER0->PR  = 0x00;
-    //Seteamos el tiempo a esperar en función a los ciclos por segundos guardados en SystemCoreClock
-    //Se divide por mil porque será en micro segundos
-    //Este Match Value lo ponemos en la posición cero
-    LPC_TIMER0->MR[0] = timeMS * (SystemCoreClock / 1000000-1);
-    //Reseteamos todas las interrupciones de este timer
-    LPC_TIMER0->IR  = 0xff;
-    //Indicamos con que MR tiene que matchear para que el TCR cambie de valor
-    LPC_TIMER0->MCR = 0x04;
-    //Inicializamos el timer
-    LPC_TIMER0->TCR = 0x01;
+	while(!flagTimer);
 
-    //Esperamos a que TCR deje de ser 0x01 lo que significara que termina de contar
-    //Esto pasara cuando el registro MR[0] sea igual a TC el cual se incrementa cada ciclo SystemCoreClock/1000-1
-    while (LPC_TIMER0->TCR & 0x01);
+	flagTimer = false;
 
-    val = true;
-    return val;
+	Chip_TIMER_ClearMatch(LPC_TIMER0, 0);
+	Chip_TIMER_Disable(LPC_TIMER0);
+	Chip_TIMER_Reset(LPC_TIMER0);
 
-	/*
-	double taux = millis();
-	bool val = false;
-	while(millis()-taux < timeMS);
-	val = true;
-	return val;*/
+	rtrn = true;
+	return rtrn;
 }
 
 
-bool delayMicroseconds ( unsigned int timeUS )
+bool delayMicroseconds ( long timeUS )
 {
-	if(timeUS>0)
-	{
-	long time = (SystemCoreClock / (4*(10000000-1)));
-	timeUS=(timeUS-1)*3;
-	time = (time)*timeUS;
+	bool rtrn = false;
+	uint32_t aux = SystemCoreClock/1000000; //Se divide por 1000 para que sea milisegundos
+	timeUS = timeUS*aux;
 
-	long i,j;
+	Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timeUS));
+	Chip_TIMER_MatchEnableInt(LPC_TIMER0, 0);
+	Chip_TIMER_ResetOnMatchEnable(LPC_TIMER0, 0);
+	Chip_TIMER_Enable(LPC_TIMER0);
+	NVIC_ClearPendingIRQ(TIMER0_IRQn);
+	NVIC_EnableIRQ(TIMER0_IRQn);
 
-	for(i=0;i<=4;i++);
+	while(!flagTimer);
 
-	for(j=0;j<=timeUS;j++)
-		for(i=0; i<=4;i++); //Tres bucles equivalen a 1uS
-	}
+	flagTimer = false;
 
-    bool val = true;
-    return val;
+	Chip_TIMER_ClearMatch(LPC_TIMER0, 0);
+	Chip_TIMER_Disable(LPC_TIMER0);
+	Chip_TIMER_Reset(LPC_TIMER0);
+
+	rtrn = true;
+	return rtrn;
 }
 
 uint32_t millis ( void )

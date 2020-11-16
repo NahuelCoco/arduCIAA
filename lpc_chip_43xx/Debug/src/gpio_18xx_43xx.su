@@ -1,0 +1,2 @@
+gpio_18xx_43xx.c:51:6:Chip_GPIO_Init	16	static
+gpio_18xx_43xx.c:56:6:Chip_GPIO_DeInit	16	static

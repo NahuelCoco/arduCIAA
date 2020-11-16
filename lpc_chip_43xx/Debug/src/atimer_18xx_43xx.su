@@ -1,0 +1,5 @@
+atimer_18xx_43xx.h:89:20:Chip_ATIMER_IntDisable	16	static
+atimer_18xx_43xx.h:99:20:Chip_ATIMER_ClearIntStatus	16	static
+atimer_18xx_43xx.h:120:20:Chip_ATIMER_UpdatePresetValue	16	static
+atimer_18xx_43xx.c:51:6:Chip_ATIMER_Init	16	static
+atimer_18xx_43xx.c:58:6:Chip_ATIMER_DeInit	16	static

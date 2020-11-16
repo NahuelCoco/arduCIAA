@@ -1,0 +1,2 @@
+pmc_18xx_43xx.c:51:6:Chip_PMC_Sleep	4	static
+pmc_18xx_43xx.c:58:6:Chip_PMC_Set_PwrState	16	static

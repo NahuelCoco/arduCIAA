@@ -1,0 +1,5 @@
+creg_18xx_43xx.h:154:20:Chip_CREG_EnableUSB0Phy	4	static
+chip_18xx_43xx.c:56:13:Chip_USB_PllSetup	8	static
+chip_18xx_43xx.c:76:6:Chip_USB0_Init	8	static
+chip_18xx_43xx.c:91:6:Chip_USB1_Init	8	static
+chip_18xx_43xx.c:113:6:SystemCoreClockUpdate	8	static

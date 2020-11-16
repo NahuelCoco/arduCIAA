@@ -1,0 +1,4 @@
+dac_18xx_43xx.c:51:6:Chip_DAC_Init	16	static
+dac_18xx_43xx.c:60:6:Chip_DAC_DeInit	16	static
+dac_18xx_43xx.c:66:6:Chip_DAC_UpdateValue	24	static
+dac_18xx_43xx.c:77:6:Chip_DAC_SetBias	16	static

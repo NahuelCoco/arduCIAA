@@ -1,0 +1,7 @@
+sdif_18xx_43xx.c:52:6:Chip_SDIF_Init	16	static
+sdif_18xx_43xx.c:86:6:Chip_SDIF_DeInit	16	static
+sdif_18xx_43xx.c:93:9:Chip_SDIF_SendCmd	32	static
+sdif_18xx_43xx.c:118:6:Chip_SDIF_GetResponse	16	static
+sdif_18xx_43xx.c:128:6:Chip_SDIF_SetClock	32	static
+sdif_18xx_43xx.c:162:6:Chip_SDIF_SetClearIntFifo	16	static
+sdif_18xx_43xx.c:175:6:Chip_SDIF_DmaSetup	40	static

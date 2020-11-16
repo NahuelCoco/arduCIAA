@@ -1,0 +1,7 @@
+otp_18xx_43xx.c:66:10:Chip_OTP_Init	16	static
+otp_18xx_43xx.c:87:10:Chip_OTP_ProgBootSrc	16	static
+otp_18xx_43xx.c:93:10:Chip_OTP_ProgJTAGDis	8	static
+otp_18xx_43xx.c:99:10:Chip_OTP_ProgUSBID	16	static
+otp_18xx_43xx.c:105:10:Chip_OTP_ProgGPWord	32	static
+otp_18xx_43xx.c:128:10:Chip_OTP_ProgKey	24	static
+otp_18xx_43xx.c:142:10:Chip_OTP_GenRand	8	static

@@ -1,0 +1,15 @@
+gpdma_18xx_43xx.c:151:16:configDMAMux	24	static
+gpdma_18xx_43xx.c:315:10:makeCtrlWord	32	static
+gpdma_18xx_43xx.c:382:8:setupChannel	32	static
+gpdma_18xx_43xx.c:430:6:Chip_GPDMA_Init	24	static
+gpdma_18xx_43xx.c:452:6:Chip_GPDMA_DeInit	16	static
+gpdma_18xx_43xx.c:458:6:Chip_GPDMA_Stop	16	static
+gpdma_18xx_43xx.c:474:8:Chip_GPDMA_Interrupt	16	static
+gpdma_18xx_43xx.c:496:5:Chip_GPDMA_InitChannelCfg	32	static
+gpdma_18xx_43xx.c:547:11:Chip_GPDMA_IntGetStatus	16	static
+gpdma_18xx_43xx.c:574:6:Chip_GPDMA_ClearIntPending	16	static
+gpdma_18xx_43xx.c:587:6:Chip_GPDMA_ChannelCmd	24	static
+gpdma_18xx_43xx.c:603:8:Chip_GPDMA_Transfer	88	static
+gpdma_18xx_43xx.c:649:8:Chip_GPDMA_PrepareDescriptor	80	static
+gpdma_18xx_43xx.c:692:8:Chip_GPDMA_SGTransfer	88	static
+gpdma_18xx_43xx.c:733:9:Chip_GPDMA_GetFreeChannel	24	static

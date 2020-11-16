@@ -4,6 +4,7 @@
 
 #include "chip.h"
 
+#define TICKRATE_HZ 1000
 
 #ifdef __cplusplus
 extern "C" {
@@ -11,8 +12,9 @@ extern "C" {
 
 //Esta libreria usa el timer 0
 
+void initTimer ( void );
 bool delay ( long timeMs );
-bool delayMicroseconds ( unsigned int timeUS );
+bool delayMicroseconds ( long timeUS );
 double millisMicroseconds ( void );
 uint32_t millis ( void );
 

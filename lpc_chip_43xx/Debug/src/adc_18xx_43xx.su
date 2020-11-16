@@ -1,0 +1,16 @@
+adc_18xx_43xx.c:47:23:getFullConvClk	4	static
+adc_18xx_43xx.c:53:23:Chip_ADC_GetClockIndex	24	static
+adc_18xx_43xx.c:68:16:getClkDiv	40	static
+adc_18xx_43xx.c:94:6:setStartMode	24	static
+adc_18xx_43xx.c:102:8:readAdcVal	32	static
+adc_18xx_43xx.c:120:6:Chip_ADC_Init	32	static
+adc_18xx_43xx.c:142:6:Chip_ADC_DeInit	16	static
+adc_18xx_43xx.c:150:8:Chip_ADC_ReadValue	24	static
+adc_18xx_43xx.c:156:12:Chip_ADC_ReadStatus	24	static
+adc_18xx_43xx.c:176:6:Chip_ADC_Int_SetChannelCmd	16	static
+adc_18xx_43xx.c:187:6:Chip_ADC_SetStartMode	16	static
+adc_18xx_43xx.c:201:6:Chip_ADC_SetSampleRate	32	static
+adc_18xx_43xx.c:215:6:Chip_ADC_SetResolution	24	static
+adc_18xx_43xx.c:222:6:Chip_ADC_EnableChannel	16	static
+adc_18xx_43xx.c:234:6:Chip_ADC_SetBurstCmd	16	static
+adc_18xx_43xx.c:247:8:Chip_ADC_ReadByte	32	static

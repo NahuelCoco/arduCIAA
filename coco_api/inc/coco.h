@@ -49,6 +49,7 @@ void _coco ( void )
 {
 	SystemCoreClockUpdate();
 
+	initTimer();
     adc_init(0); // Inicializo el ADC con el uso del ADC0
     pwm_init(); //Inicializo el SCT para PWM.
 

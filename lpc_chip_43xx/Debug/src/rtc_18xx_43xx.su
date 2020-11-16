@@ -1,0 +1,13 @@
+rtc_18xx_43xx.c:51:6:Chip_RTC_Init	16	static
+rtc_18xx_43xx.c:79:6:Chip_RTC_DeInit	16	static
+rtc_18xx_43xx.c:85:6:Chip_RTC_ResetClockTickCounter	16	static
+rtc_18xx_43xx.c:97:6:Chip_RTC_Enable	16	static
+rtc_18xx_43xx.c:107:6:Chip_RTC_CntIncrIntConfig	24	static
+rtc_18xx_43xx.c:120:6:Chip_RTC_AlarmIntConfig	24	static
+rtc_18xx_43xx.c:132:6:Chip_RTC_SetFullTime	24	static
+rtc_18xx_43xx.c:152:6:Chip_RTC_GetFullTime	24	static
+rtc_18xx_43xx.c:168:6:Chip_RTC_SetFullAlarmTime	24	static
+rtc_18xx_43xx.c:178:6:Chip_RTC_GetFullAlarmTime	24	static
+rtc_18xx_43xx.c:188:6:Chip_RTC_CalibCounterCmd	16	static
+rtc_18xx_43xx.c:202:6:Chip_RTC_EV_GetFirstTimeStamp	24	static
+rtc_18xx_43xx.c:211:6:Chip_RTC_EV_GetLastTimeStamp	24	static

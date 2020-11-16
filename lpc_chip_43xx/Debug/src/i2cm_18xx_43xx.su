@@ -1,0 +1,17 @@
+i2cm_18xx_43xx.h:130:20:Chip_I2CM_SetDutyCycle	16	static
+i2cm_18xx_43xx.h:157:20:Chip_I2CM_SendStart	16	static
+i2cm_18xx_43xx.h:168:20:Chip_I2CM_ResetControl	16	static
+i2cm_18xx_43xx.h:184:20:Chip_I2CM_WriteByte	16	static
+i2cm_18xx_43xx.h:197:23:Chip_I2CM_ReadByte	16	static
+i2cm_18xx_43xx.h:266:24:Chip_I2CM_StateChanged	16	static
+i2cm_18xx_43xx.h:277:20:Chip_I2CM_ClearSI	16	static
+i2cm_18xx_43xx.h:302:24:Chip_I2CM_GetCurState	16	static
+i2cm_18xx_43xx.c:49:23:i2cm_getClkId	16	static
+i2cm_18xx_43xx.c:59:6:Chip_I2CM_Init	16	static
+i2cm_18xx_43xx.c:68:6:Chip_I2CM_DeInit	16	static
+i2cm_18xx_43xx.c:77:6:Chip_I2CM_SetBusSpeed	24	static
+i2cm_18xx_43xx.c:85:10:Chip_I2CM_XferHandler	24	static
+i2cm_18xx_43xx.c:170:6:Chip_I2CM_Xfer	16	static
+i2cm_18xx_43xx.c:181:10:Chip_I2CM_XferBlocking	24	static
+i2cm_18xx_43xx.c:197:10:Chip_I2CM_Write	32	static
+i2cm_18xx_43xx.c:234:10:Chip_I2CM_Read	40	static

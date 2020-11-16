@@ -1,0 +1,7 @@
+clock_18xx_43xx.h:137:22:Chip_Clock_DisableMainPLL	4	static
+clock_18xx_43xx.h:159:22:Chip_Clock_SetupMainPLL	16	static
+clock_18xx_43xx.h:380:21:Chip_Clock_MainPLLLocked	4	static
+sysinit_18xx_43xx.c:81:6:Chip_SetupCoreClock	104	static
+sysinit_18xx_43xx.c:146:6:Chip_SetupXtalClocking	8	static
+sysinit_18xx_43xx.c:152:6:Chip_SetupIrcClocking	8	static
+sysinit_18xx_43xx.c:158:6:Chip_SystemInit	8	static

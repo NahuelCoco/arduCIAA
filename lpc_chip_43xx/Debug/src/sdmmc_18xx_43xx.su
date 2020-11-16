@@ -1,0 +1,17 @@
+sdif_18xx_43xx.h:279:20:Chip_SDIF_SetBlkSize	16	static
+sdif_18xx_43xx.h:354:20:Chip_SDIF_SetCardType	16	static
+sdif_18xx_43xx.h:375:20:Chip_SDIF_ClrIntStatus	16	static
+sdif_18xx_43xx.h:397:20:Chip_SDIF_SetBlkSizeByteCnt	16	static
+sdif_18xx_43xx.h:409:20:Chip_SDIF_SetByteCnt	16	static
+sdmmc_18xx_43xx.c:56:16:sdmmc_execute_command	40	static
+sdmmc_18xx_43xx.c:149:16:prv_card_acquired	4	static
+sdmmc_18xx_43xx.c:156:17:prv_get_bits	40	static
+sdmmc_18xx_43xx.c:173:13:prv_process_csd	40	static
+sdmmc_18xx_43xx.c:239:16:prv_set_trans_state	24	static
+sdmmc_18xx_43xx.c:275:16:prv_set_card_params	24	static
+sdmmc_18xx_43xx.c:307:9:Chip_SDMMC_GetState	24	static
+sdmmc_18xx_43xx.c:322:10:Chip_SDMMC_Acquire	40	static
+sdmmc_18xx_43xx.c:484:10:Chip_SDMMC_GetDeviceSize	16	static
+sdmmc_18xx_43xx.c:490:9:Chip_SDMMC_GetDeviceBlocks	16	static
+sdmmc_18xx_43xx.c:496:9:Chip_SDMMC_ReadBlocks	40	static
+sdmmc_18xx_43xx.c:543:9:Chip_SDMMC_WriteBlocks	40	static

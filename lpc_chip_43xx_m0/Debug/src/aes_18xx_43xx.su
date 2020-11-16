@@ -1,0 +1,12 @@
+aes_18xx_43xx.c:73:6:Chip_AES_Init	16	static
+aes_18xx_43xx.c:98:10:Chip_AES_SetMode	16	static
+aes_18xx_43xx.c:104:6:Chip_AES_LoadKey	16	static
+aes_18xx_43xx.c:115:6:Chip_AES_LoadKeyRNG	8	static
+aes_18xx_43xx.c:121:6:Chip_AES_LoadKeySW	16	static
+aes_18xx_43xx.c:127:6:Chip_AES_LoadIV_SW	16	static
+aes_18xx_43xx.c:133:6:Chip_AES_LoadIV_IC	8	static
+aes_18xx_43xx.c:139:10:Chip_AES_Operate	24	static
+aes_18xx_43xx.c:145:10:Chip_AES_ProgramKey	24	static
+aes_18xx_43xx.c:159:10:Chip_AES_Config_DMA	16	static
+aes_18xx_43xx.c:165:10:Chip_AES_OperateDMA	32	static
+aes_18xx_43xx.c:171:10:Chip_AES_GetStatusDMA	16	static

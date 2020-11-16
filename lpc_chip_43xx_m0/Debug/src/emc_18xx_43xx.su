@@ -1,0 +1,11 @@
+emc_18xx_43xx.c:62:17:convertTimmingParam	32	static
+emc_18xx_43xx.c:84:17:getColsLen	24	static
+emc_18xx_43xx.c:103:6:initDynMem	56	static
+emc_18xx_43xx.c:199:6:initStaticMem	32	static
+emc_18xx_43xx.c:216:6:Chip_EMC_Dynamic_Init	24	static
+emc_18xx_43xx.c:227:6:Chip_EMC_Dynamic_Enable	16	static
+emc_18xx_43xx.c:238:6:Chip_EMC_Static_Init	24	static
+emc_18xx_43xx.c:249:6:Chip_EMC_Mirror	16	static
+emc_18xx_43xx.c:260:6:Chip_EMC_Enable	16	static
+emc_18xx_43xx.c:271:6:Chip_EMC_LowPowerMode	16	static
+emc_18xx_43xx.c:282:6:Chip_EMC_Init	24	static

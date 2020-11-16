@@ -1,0 +1,9 @@
+i2s_18xx_43xx.c:47:15:getClkDiv	72	static
+i2s_18xx_43xx.c:111:6:Chip_I2S_Init	16	static
+i2s_18xx_43xx.c:117:6:Chip_I2S_DeInit	16	static
+i2s_18xx_43xx.c:130:8:Chip_I2S_TxConfig	40	static
+i2s_18xx_43xx.c:162:8:Chip_I2S_RxConfig	40	static
+i2s_18xx_43xx.c:193:6:Chip_I2S_Int_TxCmd	24	static
+i2s_18xx_43xx.c:208:6:Chip_I2S_Int_RxCmd	24	static
+i2s_18xx_43xx.c:223:6:Chip_I2S_DMA_TxCmd	16	static
+i2s_18xx_43xx.c:241:6:Chip_I2S_DMA_RxCmd	16	static

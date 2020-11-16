@@ -1,0 +1,12 @@
+rgu_18xx_43xx.h:119:20:Chip_RGU_TriggerReset	16	static
+rgu_18xx_43xx.h:130:20:Chip_RGU_InReset	16	static
+hsadc_18xx_43xx.h:377:20:Chip_HSADC_DisablePower	16	static
+hsadc_18xx_43xx.h:559:24:Chip_HSADC_GetBaseClockRate	16	static
+hsadc_18xx_43xx.c:65:6:Chip_HSADC_Init	16	static
+hsadc_18xx_43xx.c:78:6:Chip_HSADC_DeInit	16	static
+hsadc_18xx_43xx.c:92:6:Chip_HSADC_SetupFIFO	24	static
+hsadc_18xx_43xx.c:103:6:Chip_HSADC_SetThrLowValue	24	static
+hsadc_18xx_43xx.c:112:6:Chip_HSADC_SetThrHighValue	24	static
+hsadc_18xx_43xx.c:121:6:Chip_HSADC_SetSpeed	24	static
+hsadc_18xx_43xx.c:130:6:Chip_HSADC_SetPowerSpeed	40	static
+hsadc_18xx_43xx.c:166:6:Chip_HSADC_SetACDCBias	32	static

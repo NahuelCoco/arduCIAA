@@ -1,0 +1,3 @@
+wwdt_18xx_43xx.c:51:6:Chip_WWDT_Init	16	static
+wwdt_18xx_43xx.c:63:6:Chip_WWDT_DeInit	16	static
+wwdt_18xx_43xx.c:68:6:Chip_WWDT_ClearStatusFlag	16	static

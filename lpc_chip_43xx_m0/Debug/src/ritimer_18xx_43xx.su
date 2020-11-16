@@ -1,0 +1,6 @@
+ritimer_18xx_43xx.h:137:20:Chip_RIT_SetCOMPVAL	16	static
+ritimer_18xx_43xx.h:148:20:Chip_RIT_EnableCTRL	16	static
+ritimer_18xx_43xx.c:51:6:Chip_RIT_Init	16	static
+ritimer_18xx_43xx.c:61:6:Chip_RIT_DeInit	16	static
+ritimer_18xx_43xx.c:68:6:Chip_RIT_SetTimerInterval	24	static
+ritimer_18xx_43xx.c:84:11:Chip_RIT_GetIntStatus	24	static
