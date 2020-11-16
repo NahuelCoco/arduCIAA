@@ -1,0 +1,4 @@
+coco_timer.cpp:19:6:bool delay(long int)	8	static
+coco_timer.cpp:58:6:bool delayMicroseconds(unsigned int)	0	static
+coco_timer.cpp:78:10:uint32_t millis()	0	static
+coco_timer.cpp:100:8:double millisMicroseconds()	8	static

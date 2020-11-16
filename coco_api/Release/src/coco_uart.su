@@ -1,0 +1,21 @@
+coco_uart.cpp:27:6:void uart0::begin(uint32_t)	16	static
+coco_uart.cpp:49:6:bool uart0::available()	112	static
+coco_uart.cpp:89:6:void uart0::write(const char*)	0	static
+coco_uart.cpp:119:6:void uart0::write(int)	24	dynamic
+coco_uart.cpp:158:6:void uart0::write(char)	0	static
+coco_uart.cpp:175:12:const char uart0::read()	0	static
+coco_uart.cpp:191:8:char* uart0::readString()	0	static
+coco_uart.cpp:208:6:void uart1::begin(uint32_t)	16	static
+coco_uart.cpp:229:8:char* uart1::readString()	0	static
+coco_uart.cpp:245:6:void uart1::write(const char*)	0	static
+coco_uart.cpp:265:6:void uart1::write(int)	24	dynamic
+coco_uart.cpp:315:6:void uart1::write(char)	0	static
+coco_uart.cpp:332:12:const char uart1::read()	0	static
+coco_uart.cpp:349:6:bool uart1::available()	112	static
+coco_uart.cpp:391:6:void uart2::begin(uint32_t)	16	static
+coco_uart.cpp:412:8:char* uart2::readString()	0	static
+coco_uart.cpp:428:6:void uart2::write(const char*)	0	static
+coco_uart.cpp:448:6:void uart2::write(int)	24	dynamic
+coco_uart.cpp:537:6:void uart2::write(char)	0	static
+coco_uart.cpp:554:12:const char uart2::read()	0	static
+coco_uart.cpp:571:6:bool uart2::available()	112	static

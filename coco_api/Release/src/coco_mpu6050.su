@@ -1,0 +1,10 @@
+coco_mpu6050.cpp:17:9:uint8_t MPU6050::ReadReg(uint8_t, uint8_t)	16	static
+coco_mpu6050.cpp:7:6:void MPU6050::WriteReg(uint8_t, uint8_t)	16	static
+coco_mpu6050.cpp:17:9:uint8_t MPU6050::ReadReg(uint8_t, uint8_t)	16	static
+coco_mpu6050.cpp:26:1:MPU6050::MPU6050(uint8_t, uint8_t, uint8_t, float*, float*, float*, float*, float*, float*)	8	static
+coco_mpu6050.cpp:56:7:float MPU6050::ComputeGyro()	24	static
+coco_mpu6050.cpp:105:6:void MPU6050::ComputeAcc()	24	static
+coco_mpu6050.cpp:155:9:int16_t MPU6050::ComputeTemp()	8	static
+coco_mpu6050.cpp:169:6:void MPU6050::setFilterComp(float*, float*, float*)	0	static
+coco_mpu6050.cpp:180:6:void MPU6050::ComputeFilterComp(uint32_t)	40	static
+coco_mpu6050.cpp:209:1:cpp)	0	static

@@ -1,0 +1,2 @@
+coco_adc.cpp:61:6:void adc_init(bool)	24	static
+coco_adc.cpp:121:10:uint16_t analogRead(uint8_t)	24	static

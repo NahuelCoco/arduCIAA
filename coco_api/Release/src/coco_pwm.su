@@ -1,0 +1,4 @@
+coco_pwm.cpp:16:6:void pwm_init()	8	static
+coco_pwm.cpp:34:6:void pwm_changeFrec(long int)	16	static
+coco_pwm.cpp:58:6:bool analogWrite(uint8_t, uint8_t)	16	static
+coco_pwm.cpp:123:6:bool analogWriteUS(uint8_t, int)	24	static
