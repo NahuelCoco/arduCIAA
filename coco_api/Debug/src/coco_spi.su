@@ -1,0 +1,8 @@
+scu_18xx_43xx.h:135:20:void Chip_SCU_PinMuxSet(uint8_t, uint8_t, uint16_t)	16	static
+gpio_18xx_43xx.h:154:20:void Chip_GPIO_SetPinDIROutput(LPC_GPIO_T*, uint8_t, uint8_t)	16	static
+ssp_18xx_43xx.h:239:20:void Chip_SSP_Enable(LPC_SSP_T*)	16	static
+ssp_18xx_43xx.h:413:20:void Chip_SSP_SetFormat(LPC_SSP_T*, uint32_t, uint32_t, uint32_t)	24	static
+coco_spi.cpp:38:6:void SPI::begin()	16	static
+coco_spi.cpp:63:6:void SPI::setDataMode(uint32_t)	16	static
+coco_spi.cpp:79:6:void SPI::setClockDivider(uint32_t)	16	static
+coco_spi.cpp:95:9:uint8_t SPI::transfer(uint8_t)	48	static

@@ -1,0 +1,11 @@
+scu_18xx_43xx.h:199:20:void Chip_SCU_I2C0PinConfig(uint32_t)	16	static
+coco_wire.cpp:19:6:void Wire::manager(uint8_t, uint8_t*, uint16_t, uint8_t*, uint16_t)	24	static
+coco_wire.cpp:43:6:void Wire::begin()	16	static
+coco_wire.cpp:62:6:void Wire::beginTransmission(uint8_t)	16	static
+coco_wire.cpp:78:6:char Wire::endTransmission()	16	static
+coco_wire.cpp:95:6:char Wire::write(uint8_t)	32	static
+coco_wire.cpp:115:6:char Wire::write(uint8_t*, int)	32	static
+coco_wire.cpp:133:6:char Wire::requestFrom(uint8_t, uint8_t)	48	dynamic
+coco_wire.cpp:158:9:uint8_t Wire::available()	16	static
+coco_wire.cpp:174:9:uint8_t Wire::read()	24	static
+coco_wire.cpp:201:6:void Wire::setClock(long int)	16	static

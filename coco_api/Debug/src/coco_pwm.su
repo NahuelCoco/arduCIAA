@@ -1,0 +1,15 @@
+scu_18xx_43xx.h:135:20:void Chip_SCU_PinMuxSet(uint8_t, uint8_t, uint16_t)	16	static
+scu_18xx_43xx.h:150:20:void Chip_SCU_PinMux(uint8_t, uint8_t, uint16_t, uint8_t)	24	static
+sct_18xx_43xx.h:339:20:void Chip_SCT_SetControl(LPC_SCT_T*, uint32_t)	16	static
+sct_18xx_43xx.h:350:20:void Chip_SCT_ClearControl(LPC_SCT_T*, uint32_t)	16	static
+sct_18xx_43xx.h:362:20:void Chip_SCT_SetMatchReload(LPC_SCT_T*, CHIP_SCT_MATCH_REG_T, uint32_t)	24	static
+sct_pwm_18xx_43xx.h:56:24:uint32_t Chip_SCTPWM_GetTicksPerCycle(LPC_SCT_T*)	16	static
+sct_pwm_18xx_43xx.h:71:24:uint32_t Chip_SCTPWM_PercentageToTicks(LPC_SCT_T*, uint8_t)	16	static
+sct_pwm_18xx_43xx.h:103:20:void Chip_SCTPWM_SetDutyCycle(LPC_SCT_T*, uint8_t, uint32_t)	24	static
+sct_pwm_18xx_43xx.h:113:20:void Chip_SCTPWM_Init(LPC_SCT_T*)	16	static
+sct_pwm_18xx_43xx.h:129:20:void Chip_SCTPWM_Start(LPC_SCT_T*)	16	static
+sct_pwm_18xx_43xx.h:139:20:void Chip_SCTPWM_Stop(LPC_SCT_T*)	16	static
+coco_pwm.cpp:16:6:void pwm_init()	8	static
+coco_pwm.cpp:34:6:void pwm_changeFrec(long int)	16	static
+coco_pwm.cpp:58:6:bool analogWrite(uint8_t, uint8_t)	32	static
+coco_pwm.cpp:123:6:bool analogWriteUS(uint8_t, int)	48	static

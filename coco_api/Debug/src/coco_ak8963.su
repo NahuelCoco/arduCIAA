@@ -1,0 +1,10 @@
+cmath:184:3:constexpr float std::cos(float)	16	static
+cmath:425:3:constexpr float std::sin(float)	16	static
+coco_wire.h:15:7:Wire::Wire()	16	static
+coco_ak8963.cpp:8:6:void AK8963::WriteReg(uint8_t, uint8_t)	24	static
+coco_ak8963.cpp:18:9:uint8_t AK8963::ReadReg(uint8_t, uint8_t)	24	static
+coco_ak8963.cpp:27:1:AK8963::AK8963(uint8_t, int16_t*, int16_t*, int16_t*, float*)	24	static
+coco_ak8963.cpp:43:6:void AK8963::ReadMag()	32	static
+coco_ak8963.cpp:67:6:void AK8963::ComputeMag(float, float)	40	static
+coco_ak8963.cpp:77:1:void __static_initialization_and_destruction_0(int, int)	16	static
+coco_ak8963.cpp:77:1:cpp)	8	static
