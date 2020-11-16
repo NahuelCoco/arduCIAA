@@ -2,15 +2,12 @@
 #include "coco_gpio.h"
 
 bool flagTimer = false;
-
-/*
- * Libreria en proceso. Solo utilizar función delay
- */
+double long globalClock = 0;
 
 /*
  * Función:			void initTimer ( void )
  *
- * Uso:				Con esta función inicializaremos el timer 0.
+ * Uso:				Con esta función inicializaremos el timer 0 y el 1.
  *
  * Return:			No hay retorno.
  *
@@ -22,27 +19,17 @@ void initTimer ( void )
 {
 	Chip_TIMER_Init(LPC_TIMER0);
 	Chip_TIMER_Reset(LPC_TIMER0);
+
+	Chip_TIMER_Init(LPC_TIMER1);
+	Chip_TIMER_Reset(LPC_TIMER1);
+
+	Chip_TIMER_SetMatch(LPC_TIMER1, 0, (SystemCoreClock/TICKRATE_HZ_MS));
+	Chip_TIMER_MatchEnableInt(LPC_TIMER1, 0);
+	Chip_TIMER_ResetOnMatchEnable(LPC_TIMER1, 0);
+	Chip_TIMER_Enable(LPC_TIMER1);
+	NVIC_ClearPendingIRQ(TIMER1_IRQn);
+	NVIC_EnableIRQ(TIMER1_IRQn);
 }
-
-extern "C"
-{
-	void TIMER0_IRQHandler(void)
-	{
-
-		if(Chip_TIMER_MatchPending(LPC_TIMER0, 0))
-		{
-
-			Chip_TIMER_ClearMatch(LPC_TIMER0, 0);
-			flagTimer = true;
-
-		}
-
-	}
-}
-
-/*
- * Libreria en proceso. Solo utilizar función delay
- */
 
 /*
  * Función:			bool delay ( long timeMS )
@@ -58,7 +45,7 @@ extern "C"
 bool delay ( long timeMS )
 {
 	bool rtrn = false;
-	uint32_t aux = SystemCoreClock/1000; //Se divide por 1000 para que sea milisegundos
+	uint32_t aux = SystemCoreClock/TICKRATE_HZ_MS;
 	timeMS = timeMS*aux;
 
 	Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timeMS));
@@ -80,11 +67,21 @@ bool delay ( long timeMS )
 	return rtrn;
 }
 
+/*
+ * Función:			bool delay ( long timeUS )
+ *
+ * Uso:				Con esta función realizaremos un retardo de un tiempo determinado.
+ *
+ * Return:			Devolverá un 1 cuando finalice el tiempo
+ *
+ * Parámetros:		-timeUS: Tiempo en microsegundos que se desea esperar.
+ *
+ */
 
 bool delayMicroseconds ( long timeUS )
 {
 	bool rtrn = false;
-	uint32_t aux = SystemCoreClock/1000000; //Se divide por 1000 para que sea milisegundos
+	uint32_t aux = SystemCoreClock/TICKRATE_HZ_US;
 	timeUS = timeUS*aux;
 
 	Chip_TIMER_SetMatch(LPC_TIMER0, 0, (timeUS));
@@ -106,45 +103,71 @@ bool delayMicroseconds ( long timeUS )
 	return rtrn;
 }
 
-uint32_t millis ( void )
-{
-	/*
-	 * TC se incrementa en 1 por cada 1/SystemCoreClock.
-	 * Entonces si en una vuelta paso 1/SystemCoreClock, en TC vueltas, cuantas pasaron?
-	 * El multiplicador x1000 esta para que el tiempo se devuelva en milisegundos
-	 * Se resta 1 como compensación del registro TC + 1
-	 */
-	uint32_t h = LPC_TIMER0->TCR;
-	if (h != 1)
-	{
-		//En nuestro caso usare el timer 0 para realizar el delay y ese sera el que procedere a resetear
-		LPC_TIMER0->TCR = 0x02;
-		//Seteamos el preescaler en 0
-		LPC_TIMER0->PR  = 0x00;
-		LPC_TIMER0->TCR = 0x01;
-	}
-	uint32_t var = (LPC_TIMER0->TC)/(SystemCoreClock / (1000-1));
-	return var;
+/*
+ * Función:			double long millis ( void )
+ *
+ * Uso:				Esta función devolverá el tiempo que pasó desde que se inicio el uC.
+ *
+ * Return:			Devolverá un double long con el tiempo.
+ *
+ * Parámetros:		No requiere parámetros.
+ *
+ */
 
+double long millis ( void )
+{
+	return globalClock;
 }
 
-double millisMicroseconds ( void )
+extern "C"
 {
-	/*
-	 * TC se incrementa en 1 por cada 1/SystemCoreClock.
-	 * Entonces si en una vuelta paso 1/SystemCoreClock, en TC vueltas, cuantas pasaron?
-	 * El multiplicador x1000 esta para que el tiempo se devuelva en milisegundos
-	 * Se resta 1 como compensación del registro TC + 1
-	 */
-	uint32_t h = LPC_TIMER0->TCR;
-	if (h != 1)
-	{
-		//En nuestro caso usare el timer 0 para realizar el delay y ese sera el que procedere a resetear
-		LPC_TIMER0->TCR = 0x02;
-		//Seteamos el preescaler en 0
-		LPC_TIMER0->PR  = 0x00;
-		LPC_TIMER0->TCR = 0x01;
-	}
-	return ((LPC_TIMER0->TC)/(SystemCoreClock / 1000000-1));
-}
 
+/*
+ * Función:			void TIMER0_IRQHandler(void)
+ *
+ * Uso:				Interrupción que cambiará el estado del flag cuando se cumpla el tiempo.
+ *
+ * Return:			No retorna parámetro.
+ *
+ * Parámetros:		No necesita parámetro.
+ *
+ */
+
+	void TIMER0_IRQHandler(void)
+	{
+
+		if(Chip_TIMER_MatchPending(LPC_TIMER0, 0))
+		{
+
+			Chip_TIMER_ClearMatch(LPC_TIMER0, 0);
+			flagTimer = true;
+
+		}
+
+	}
+
+/*
+* Función:			void TIMER1_IRQHandler(void)
+*
+* Uso:				Se utilizará para aumentar en 1 cada 1 mS a globalClock.
+*
+* Return:			No retorna parámetro.
+*
+* Parámetros:		No necesita parámetro.
+*
+*/
+
+	void TIMER1_IRQHandler(void)
+	{
+
+		if(Chip_TIMER_MatchPending(LPC_TIMER1, 0))
+		{
+
+			Chip_TIMER_ClearMatch(LPC_TIMER1, 0);
+			globalClock++;
+		}
+
+	}
+
+
+}

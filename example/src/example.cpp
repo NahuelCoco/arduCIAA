@@ -4,12 +4,17 @@
 int main(void) {
 
 	_coco();
-	pinMode(39,OUTPUT);
+	pinMode(LED1,OUTPUT);
+	pinMode(TEC1, INPUT);
+
 
     while(1)
     {
-    	digitalToggle(39);
-    	delayMicroseconds(5000000);
+    	if(!digitalRead(TEC1))
+    		digitalWrite(LED1, HIGH);
+
+    	if(digitalRead(TEC1))
+    		digitalWrite(LED1, LOW);
     }
     return 0 ;
 }
