@@ -8,7 +8,6 @@ CPP_SRCS += \
 ../src/coco_ak8963.cpp \
 ../src/coco_gpio.cpp \
 ../src/coco_mpu6050.cpp \
-../src/coco_pid.cpp \
 ../src/coco_pwm.cpp \
 ../src/coco_spi.cpp \
 ../src/coco_timer.cpp \
@@ -20,7 +19,6 @@ OBJS += \
 ./src/coco_ak8963.o \
 ./src/coco_gpio.o \
 ./src/coco_mpu6050.o \
-./src/coco_pid.o \
 ./src/coco_pwm.o \
 ./src/coco_spi.o \
 ./src/coco_timer.o \
@@ -32,7 +30,6 @@ CPP_DEPS += \
 ./src/coco_ak8963.d \
 ./src/coco_gpio.d \
 ./src/coco_mpu6050.d \
-./src/coco_pid.d \
 ./src/coco_pwm.d \
 ./src/coco_spi.d \
 ./src/coco_timer.d \

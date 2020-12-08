@@ -1,4 +1,4 @@
-romapi_18xx_43xx.h:115:20:iap_entry	16	static
+romapi_18xx_43xx.h:115:20:iap_entry	24	static
 iap_18xx_43xx.c:51:9:Chip_IAP_Init	48	static
 iap_18xx_43xx.c:62:9:Chip_IAP_PreSectorForReadWrite	72	static
 iap_18xx_43xx.c:76:9:Chip_IAP_CopyRamToFlash	72	static

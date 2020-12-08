@@ -27,6 +27,6 @@ uart_18xx_43xx.c:257:6:Chip_UART_TXIntHandlerRB	24	static
 uart_18xx_43xx.c:275:10:Chip_UART_SendRB	32	static
 uart_18xx_43xx.c:297:5:Chip_UART_ReadRB	24	static
 uart_18xx_43xx.c:305:6:Chip_UART_IRQRBHandler	24	static
-uart_18xx_43xx.c:325:10:Chip_UART_SetBaudFDR	112	static
+uart_18xx_43xx.c:325:10:Chip_UART_SetBaudFDR	104	static
 uart_18xx_43xx.c:387:12:Chip_UART_GetABEOStatus	16	static
 uart_18xx_43xx.c:394:6:Chip_UART_ABCmd	32	static
