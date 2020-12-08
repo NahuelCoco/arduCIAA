@@ -23,13 +23,14 @@ bool pinMode ( uint8_t digitalNumber, bool setting )
 	{
 		if( setting )
 		{
-			Chip_SCU_PinMuxSet(gpio->numberPort, gpio->numberPin, (SCU_MODE_INACT | SCU_MODE_ZIF_DIS | SCU_MODE_INBUFF_EN));
+
+			Chip_SCU_PinMux(gpio->numberPort, gpio->numberPin, (SCU_MODE_INACT | SCU_MODE_ZIF_DIS | SCU_MODE_INBUFF_EN), gpio->function);
 			Chip_GPIO_SetPinDIROutput(LPC_GPIO_PORT, gpio->gpioPort, gpio->gpioPin);
 		}
 
 		else
 		{
-			Chip_SCU_PinMuxSet(gpio->numberPort, gpio->numberPin, (SCU_MODE_INACT | SCU_MODE_INBUFF_EN | SCU_MODE_ZIF_DIS)); //SCU_MODE_PULLDOWN/PULLUP
+			Chip_SCU_PinMux(gpio->numberPort, gpio->numberPin, (SCU_MODE_INACT | SCU_MODE_INBUFF_EN | SCU_MODE_ZIF_DIS), gpio->function); //SCU_MODE_PULLDOWN/PULLUP
 			Chip_GPIO_SetPinDIRInput(LPC_GPIO_PORT, gpio->gpioPort, gpio->gpioPin);
 		}
 		value = 1;

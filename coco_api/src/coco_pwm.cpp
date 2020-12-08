@@ -33,7 +33,7 @@ void pwm_init ( void )
 
 void pwm_changeFrec ( long frec ) //Esta función no existe en Arduino como genérica por lo que se optó por este prototipo
 {
-	//freq = frec;
+	freq = frec;
 	Chip_SCTPWM_Stop(SCT_PWM);
 	Chip_SCTPWM_Init(SCT_PWM);
 	Chip_SCTPWM_SetRate(SCT_PWM, frec);
@@ -119,6 +119,20 @@ bool analogWrite ( uint8_t pin, uint8_t value )
 	return ok;
 }
 
+/*
+ * Función:			void analogWriteUS ( uint8_t pin, int8_t value )
+ *
+ * Uso:				Seteará el valor del Dutty para el PWM en el pin de PWM seleccionado.
+ *
+ * Return:			Devolverá un 1 en caso de ejecutarse correctamente. De lo contrario, un 0.
+ *
+ * Parámetros:		-pin: Número de pin PWM en la API COCO del PWM a configurar. Utilice el mismo número
+ * 					existe en coco_gpio.h pero verifique que al lado del número tenga "~", eso significará
+ * 					que es un pin apto para esta función.
+ * 					-value: Este parámetro deberá ser un valor en microsegundos y será de utlidad para indicar
+ * 					el dutty deseado en el PWM.
+ *
+ */
 
 bool analogWriteUS ( uint8_t pin, int value )
 {
@@ -127,11 +141,8 @@ bool analogWriteUS ( uint8_t pin, int value )
 	float percent;
 	long period;
 
-	period = (1 / 200.00)*1000000;
+	period = (1 / freq)*1000000;
 
-	//ticksTotal = Chip_SCTPWM_GetTicksPerCycle(SCT_PWM);
-	//Ticks1ms = ticksTotal / 100;
-	//TicksOut = Ticks1ms / 1000;
 	percent = value * 100.00 / period;
 
 		if ( pin == 4 || pin == 7 || pin == 12 || pin == 13 || pin == 14 || pin == 29 || pin == 31 || pin == 32 || pin == 33 || pin == 34 || pin == 35 || pin == 39 || pin == 40 || pin == 41 )

@@ -26,8 +26,8 @@ String val2;
 
 void uart0::begin ( uint32_t br )
 {
-	Chip_SCU_PinMuxSet(9, 5, (SCU_MODE_INACT | SCU_MODE_FUNC6)); //Tx
-	Chip_SCU_PinMuxSet(9, 6, (SCU_MODE_INACT | SCU_MODE_INBUFF_EN | SCU_MODE_FUNC6)); //Rx
+	Chip_SCU_PinMuxSet(9, 5, (SCU_MODE_INACT | SCU_MODE_FUNC7)); //Tx
+	Chip_SCU_PinMuxSet(9, 6, (SCU_MODE_INACT | SCU_MODE_INBUFF_EN | SCU_MODE_FUNC7)); //Rx
 	Chip_UART_Init(LPC_USART0); //Inicializo USART0
 	Chip_UART_SetBaud(LPC_USART0, br); //Configuro el baudrate de la USART0
 	Chip_UART_ConfigData(LPC_USART0, UART_LCR_WLEN8 | UART_LCR_PARITY_DIS | UART_LCR_SBS_1BIT); //Configuro USART0 con 8 bits de data 1 de stop y sin paridad
@@ -62,7 +62,7 @@ bool uart0::available ( void )
 			aux[cont] = (const char) Chip_UART_ReadByte(LPC_USART0);
 			cont++;
 		}
-		val0 = aux; //Guardamos lo leido en la variable global val0 para luego si se desea, ser utilizada en la función read
+		val2 = aux; //Guardamos lo leido en la variable global val2 para luego si se desea, ser utilizada en la función read
 		if(aux[0] == '\n' || aux[0] == '\r' )
 		{
 			return false;
@@ -123,35 +123,75 @@ void uart0::write( int number )
 	int div=1;
 	char i=0;
 	char j=0;
-	aux = number;
-	while(aux)
+	if (number >= 0)
 	{
-		aux = aux / 10;
-		div = div*10;
-		i++;
-	}
-	i++;
-	char arrayNumbers[i];
-
-	i--;
-	j=i;
-	i=0;
-	while(div>1)
-	{
-		div = div/10;
-		arrayNumbers[i] = (number / div) + 48;
-		number = number % div;
-		i++;
-	}
-
-	arrayNumbers[i]='\0';
-	const char *word = arrayNumbers;
-
-	while( *word != '\0' ) //Detecto el fin de la palabra
+		aux = number;
+		while(aux)
 		{
-			while ( !(Chip_UART_ReadLineStatus(LPC_USART0) & UART_LSR_THRE));
-			Chip_UART_SendByte(LPC_USART0, (uint8_t) *word++);
+			aux = aux / 10;
+			div = div*10;
+			i++;
 		}
+		i++;
+		char arrayNumbers[i];
+
+		i--;
+		j=i;
+		i=0;
+		while(div>1)
+		{
+			div = div/10;
+			arrayNumbers[i] = (number / div) + 48;
+			number = number % div;
+			i++;
+		}
+
+		arrayNumbers[i]='\0';
+		const char *word = arrayNumbers;
+
+		while( *word != '\0' ) //Detecto el fin de la palabra
+			{
+				while ( !(Chip_UART_ReadLineStatus(LPC_USART0) & UART_LSR_THRE));
+				Chip_UART_SendByte(LPC_USART0, (uint8_t) *word++);
+			}
+	}
+	else
+	{
+		i = 1;
+		j = 1;
+		number = (-1)*number;
+		aux = number;
+		while(aux)
+		{
+			aux = aux / 10;
+			div = div*10;
+			i++;
+		}
+		i++;
+		char arrayNumbers[i];
+
+		i--;
+		j=i;
+		i=1;
+		while(div>1)
+		{
+			div = div/10;
+			arrayNumbers[i] = (number / div) + 48;
+			number = number % div;
+			i++;
+		}
+
+		arrayNumbers[i]='\0';
+		arrayNumbers[0]='-';
+		const char *word = arrayNumbers;
+
+		while( *word != '\0' ) //Detecto el fin de la palabra
+			{
+				while ( !(Chip_UART_ReadLineStatus(LPC_USART0) & UART_LSR_THRE));
+				Chip_UART_SendByte(LPC_USART0, (uint8_t) *word++);
+			}
+	}
+
 }
 
 
@@ -193,6 +233,7 @@ String uart0::readString ( void )
 	return val0;
 }
 
+
 /*
  * Función:			void uart1::begin ( uint32_t br )
  *
@@ -207,8 +248,8 @@ String uart0::readString ( void )
 
 void uart1::begin ( uint32_t br )
 {
-	Chip_SCU_PinMuxSet(2, 3, (SCU_MODE_INACT | SCU_MODE_FUNC6));
-	Chip_SCU_PinMuxSet(2, 4, (SCU_MODE_INACT | SCU_MODE_INBUFF_EN | SCU_MODE_FUNC6));
+	Chip_SCU_PinMuxSet(2, 3, (SCU_MODE_INACT | SCU_MODE_FUNC2));
+	Chip_SCU_PinMuxSet(2, 4, (SCU_MODE_INACT | SCU_MODE_INBUFF_EN | SCU_MODE_FUNC2));
 	Chip_UART_Init(LPC_USART3); //Inicializo USART3
 	Chip_UART_SetBaud(LPC_USART3, br); //Configuro el baudrate de la USART3
 	Chip_UART_ConfigData(LPC_USART3, UART_LCR_WLEN8 | UART_LCR_PARITY_DIS | UART_LCR_SBS_1BIT); //Configuro USART3 con 8 bits de data 1 de stop y sin paridad
@@ -269,35 +310,75 @@ void uart1::write( int number )
 	int div=1;
 	char i=0;
 	char j=0;
-	aux = number;
-	while(aux)
+	if (number >= 0)
 	{
-		aux = aux / 10;
-		div = div*10;
-		i++;
-	}
-	i++;
-	char arrayNumbers[i];
-
-	i--;
-	j=i;
-	i=0;
-	while(div>1)
-	{
-		div = div/10;
-		arrayNumbers[i] = (number / div) + 48;
-		number = number % div;
-		i++;
-	}
-
-	arrayNumbers[i]='\0';
-	const char *word = arrayNumbers;
-
-	while( *word != '\0' ) //Detecto el fin de la palabra
+		aux = number;
+		while(aux)
 		{
-			while ( !(Chip_UART_ReadLineStatus(LPC_USART3) & UART_LSR_THRE));
-			Chip_UART_SendByte(LPC_USART3, (uint8_t) *word++);
+			aux = aux / 10;
+			div = div*10;
+			i++;
 		}
+		i++;
+		char arrayNumbers[i];
+
+		i--;
+		j=i;
+		i=0;
+		while(div>1)
+		{
+			div = div/10;
+			arrayNumbers[i] = (number / div) + 48;
+			number = number % div;
+			i++;
+		}
+
+		arrayNumbers[i]='\0';
+		const char *word = arrayNumbers;
+
+		while( *word != '\0' ) //Detecto el fin de la palabra
+			{
+				while ( !(Chip_UART_ReadLineStatus(LPC_USART3) & UART_LSR_THRE));
+				Chip_UART_SendByte(LPC_USART3, (uint8_t) *word++);
+			}
+	}
+	else
+	{
+		i = 1;
+		j = 1;
+		number = (-1)*number;
+		aux = number;
+		while(aux)
+		{
+			aux = aux / 10;
+			div = div*10;
+			i++;
+		}
+		i++;
+		char arrayNumbers[i];
+
+		i--;
+		j=i;
+		i=1;
+		while(div>1)
+		{
+			div = div/10;
+			arrayNumbers[i] = (number / div) + 48;
+			number = number % div;
+			i++;
+		}
+
+		arrayNumbers[i]='\0';
+		arrayNumbers[0]='-';
+		const char *word = arrayNumbers;
+
+		while( *word != '\0' ) //Detecto el fin de la palabra
+			{
+				while ( !(Chip_UART_ReadLineStatus(LPC_USART3) & UART_LSR_THRE));
+				Chip_UART_SendByte(LPC_USART3, (uint8_t) *word++);
+			}
+	}
+
 }
 
 
@@ -362,7 +443,7 @@ bool uart1::available ( void )
 			aux[cont] = (const char) Chip_UART_ReadByte(LPC_USART3);
 			cont++;
 		}
-		val1 = aux; //Guardamos lo leido en la variable global val1 para luego si se desea, ser utilizada en la función read
+		val2 = aux; //Guardamos lo leido en la variable global val2 para luego si se desea, ser utilizada en la función read
 		if(aux[0] == '\n' || aux[0] == '\r' )
 		{
 			return false;
@@ -559,7 +640,7 @@ const char uart2::read ( void )
 /*
  * Función:			bool uart2::available ( void )
  *
- * Uso:				Con esta función conoceremos si existe información disponible en el buffer
+ * Uso:				Con esta función conoceremos si existe información disponible en el buffer (16 bytes FIFO)
  * 					de la UART2.
  *
  * Return:			Devuelve un 1 en caso de haber información y un 0 en caso contrario.

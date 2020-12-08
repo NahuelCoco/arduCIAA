@@ -178,58 +178,59 @@ struct digital_t
 	uint8_t numberPin;
     uint8_t gpioPort;
     uint8_t gpioPin;
+    uint8_t function;
 };
 
 //A continuación declararemos el vector con la declaración de los pines digitales para la API.
 
 static const struct digital_t digitalPins[] =
 {
-	{1,	15,		0,	 2}, //RXD0
-	{3,	7,		5,	10}, //SPI_MOSI
-	{4,	6,		2,	 6}, //LCD_EN
-	{6,	1,		3,	 0}, //GPIO0
-	{6,	5,		3,	 4}, //GPIO2
-	{6,	8,		5,	16}, //GPIO4
-	{6,	10,		3,	 6}, //GPIO6
-	{6,	12,		2,	 8}, //GPIO8
-	{6,	11,		3,	 7}, //GPIO7
-	{6,	9,		3,	 5}, //GPIO5
-	{6,	7,		5,	15}, //GPIO3
-	{6,	4,		3,	 3}, //GPIO1
-	{4,	4,		2,	 4}, //LCD1
-	{4,	5,		2,	 5}, //LCD2
-	{4,	6,		2,	 6}, //LCD3
-	{4,	8,		5,	12}, //LCD_RS
-	{4,	10,		5,	14}, //LCD4
-	{1,	3,		0,	10}, //SPI_MISO
-	{1,	20,		0,	15}, //TXD1
-	{1,	18,		0,	13}, //TXD0
-	{1,	17,		0,	12}, //MDIO
-	{1,	16,		0,	 3}, //CRS_DV
-	{7,	7,		3,	15}, //MDC
-	{0,	1,		0,	 1}, //TX_EN
-	{0,	0,		0,	 0}, //RXD1
-	{2,	4,		5,	 4}, //232_RX
-	{2,	3,		5,	 3}, //232_TX
-	{3,	1,		5,	 8}, //CAN_RD
-	{3,	2,		5,	 9}, //CAN_TD
-	{7,	4,		3,	12}, //T_COL1
-	{4,	0,		2,	 0}, //T_FIL0
-	{4,	3,		2,	 3}, //T_FIL3
-	{4,	2,		2,	 2}, //T_FIL2
-	{1,	5,		1,	 8}, //T_COL0
-	{4,	1,		2,	 1}, //T_F1
-	{7,	5,		3,	13}, //T_C2
-	{2,	0,		5,	 0}, //LED_R
-	{2,	1,		5,	 1}, //LED_G
-	{2,	2,		5,	 2}, //LED_B
-	{2,	10,		0,	14}, //LED1
-	{2,	11,		1,	11}, //LED2
-	{2,	12,		1,	12}, //LED3
-	{1,	0,		0,	 4}, //TEC1
-	{1,	1,		0,	 8}, //TEC2
-	{1,	2,		0,	 9}, //TEC3
-	{1,	6,		1,	 9}  //TEC4
+	{1,	15,		0,	 2,	FUNC0}, //RXD0
+	{3,	7,		5,	10,	FUNC4}, //SPI_MOSI
+	{4,	6,		2,	 6,	FUNC0}, //LCD_EN
+	{6,	1,		3,	 0,	FUNC0}, //GPIO0
+	{6,	5,		3,	 4,	FUNC0}, //GPIO2
+	{6,	8,		5,	16,	FUNC4}, //GPIO4
+	{6,	10,		3,	 6,	FUNC0}, //GPIO6
+	{6,	12,		2,	 8,	FUNC0}, //GPIO8
+	{6,	11,		3,	 7,	FUNC0}, //GPIO7
+	{6,	9,		3,	 5,	FUNC0}, //GPIO5
+	{6,	7,		5,	15,	FUNC0}, //GPIO3
+	{6,	4,		3,	 3,	FUNC0}, //GPIO1
+	{4,	4,		2,	 4,	FUNC0}, //LCD1
+	{4,	5,		2,	 5,	FUNC0}, //LCD2
+	{4,	6,		2,	 6,	FUNC0}, //LCD3
+	{4,	8,		5,	12,	FUNC0}, //LCD_RS
+	{4,	10,		5,	14,	FUNC0}, //LCD4
+	{1,	3,		0,	10,	FUNC0}, //SPI_MISO
+	{1,	20,		0,	15,	FUNC0}, //TXD1
+	{1,	18,		0,	13,	FUNC0}, //TXD0
+	{1,	17,		0,	12,	FUNC0}, //MDIO
+	{1,	16,		0,	 3,	FUNC0}, //CRS_DV
+	{7,	7,		3,	15,	FUNC0}, //MDC
+	{0,	1,		0,	 1,	FUNC0}, //TX_EN
+	{0,	0,		0,	 0,	FUNC0}, //RXD1
+	{2,	4,		5,	 4,	FUNC4}, //232_RX
+	{2,	3,		5,	 3,	FUNC4}, //232_TX
+	{3,	1,		5,	 8,	FUNC4}, //CAN_RD
+	{3,	2,		5,	 9,	FUNC4}, //CAN_TD
+	{7,	4,		3,	12,	FUNC0}, //T_COL1
+	{4,	0,		2,	 0,	FUNC0}, //T_FIL0
+	{4,	3,		2,	 3,	FUNC0}, //T_FIL3
+	{4,	2,		2,	 2,	FUNC0}, //T_FIL2
+	{1,	5,		1,	 8,	FUNC0}, //T_COL0
+	{4,	1,		2,	 1,	FUNC0}, //T_F1
+	{7,	5,		3,	13,	FUNC0}, //T_C2
+	{2,	0,		5,	 0,	FUNC4}, //LED_R
+	{2,	1,		5,	 1,	FUNC4}, //LED_G
+	{2,	2,		5,	 2,	FUNC4}, //LED_B
+	{2,	10,		0,	14,	FUNC0}, //LED1
+	{2,	11,		1,	11,	FUNC0}, //LED2
+	{2,	12,		1,	12,	FUNC0}, //LED3
+	{1,	0,		0,	 4,	FUNC0}, //TEC1
+	{1,	1,		0,	 8,	FUNC0}, //TEC2
+	{1,	2,		0,	 9,	FUNC0}, //TEC3
+	{1,	6,		1,	 9,	FUNC0}  //TEC4
 };
 
 #ifdef __cplusplus
