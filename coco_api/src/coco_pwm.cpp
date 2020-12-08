@@ -1,6 +1,8 @@
 #include "coco_pwm.h"
 #include "coco_gpio.h"
 
+long freq = 50;
+
 /*
  * Función:			void pwm_init ( void )
  *

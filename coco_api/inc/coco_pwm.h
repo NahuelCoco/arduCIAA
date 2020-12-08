@@ -10,8 +10,6 @@
 extern "C" {
 #endif
 
-long freq = 50;
-
 void pwm_init ( void );
 
 void pwm_changeFrec ( long frec );
