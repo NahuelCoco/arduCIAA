@@ -10,7 +10,6 @@
 #include "coco_uart.h"
 #include "coco_wire.h"
 #include "coco_spi.h"
-#include "coco_pid.h"
 #include "coco_mpu6050.h"
 #include "coco_ak8963.h"
 
@@ -49,7 +48,7 @@ void _coco ( void )
 {
 	SystemCoreClockUpdate();
 
-	initTimer();
+	initTimer(); //Inicializo Timer
     adc_init(0); // Inicializo el ADC con el uso del ADC0
     pwm_init(); //Inicializo el SCT para PWM.
 
