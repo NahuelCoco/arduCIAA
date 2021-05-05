@@ -64,11 +64,12 @@ class MPU6050
 		MPU6050 ( uint8_t setEscalaGyro, uint8_t setEscalaAcc, uint8_t setConfigPwr, float *fGyroX, float *fGyroY, float *fGyroZ, float *fAccX, float *fAccY, float *fAccZ );
 		void WriteReg ( uint8_t reg, uint8_t value );
 		uint8_t ReadReg ( uint8_t address, uint8_t reg );
-		float ComputeGyro ( void );
+		void ComputeGyro ( void );
 		void ComputeAcc ( void );
 		int16_t ComputeTemp ( void );
 		void setFilterComp ( float *AngX, float *AngY, float *AngZ );
-		void ComputeFilterComp ( uint32_t tMedido );
+		void ComputeFilterComp ( void );
+		void CalibrateActitude ( void );
 
 	private:
 		uint8_t EscalaGyro;
@@ -80,10 +81,10 @@ class MPU6050
 		float *AccX, *AccY, *AccZ;
 
 		float *fcAngX, *fcAngY, *fcAngZ;
+		float AccX_offset = 0.00, AccY_offset = 0.00;
+		float GyroX_offset = 0.00, GyroY_offset = 0.00;
 
 		float angGyroX=0, angGyroY=0;
-
-		uint32_t previousTime=0, currentTime=0, elapsedTime=0;
 };
 
 #ifdef __cplusplus

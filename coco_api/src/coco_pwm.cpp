@@ -36,10 +36,10 @@ void pwm_init ( void )
 void pwm_changeFrec ( long frec ) //Esta función no existe en Arduino como genérica por lo que se optó por este prototipo
 {
 	freq = frec;
-	Chip_SCTPWM_Stop(SCT_PWM);
-	Chip_SCTPWM_Init(SCT_PWM);
-	Chip_SCTPWM_SetRate(SCT_PWM, frec);
-	Chip_SCTPWM_Start(SCT_PWM);
+	Chip_SCTPWM_Stop(SCT_PWM); //Detemos SCT PWM
+	Chip_SCTPWM_Init(SCT_PWM); //Volvemos a iniciar
+	Chip_SCTPWM_SetRate(SCT_PWM, frec); //Seteamos la frecuencia
+	Chip_SCTPWM_Start(SCT_PWM); //Start
 }
 
 /*
@@ -62,8 +62,9 @@ bool analogWrite ( uint8_t pin, uint8_t value )
 	bool ok = 0;
 	uint8_t indice=0;
 
-	if ( value >= 0 && value <= 255 )
+	if ( value >= 0 && value <= 255 ) //Si el valor esta entre 0 y 255 es valido.
 	{
+		//Evaluamos que pin es para asociar el indice correspondiente. Esto debido al uso de libreria.
 		if ( pin == 4 || pin == 7 || pin == 29 || pin == 31 || pin == 32 || pin == 33 || pin == 34 || pin == 35 || pin == 39 || pin == 40 || pin == 41 )
 		{
 			if(pin == 4)
@@ -111,10 +112,10 @@ bool analogWrite ( uint8_t pin, uint8_t value )
 				indice = 4;
 			}
 			const struct digital_t *p = &digitalPins[pin]; //En coco_gpio.h
-			uint8_t percent = value * 100 / 255 ;
-			Chip_SCU_PinMux(p->numberPort, p->numberPin, SCU_MODE_INACT, FUNC1);
+			uint8_t percent = value * 100 / 255 ; //Calculamos el porcentual
+			Chip_SCU_PinMux(p->numberPort, p->numberPin, SCU_MODE_INACT, FUNC1); //Seteamos funcion
 			Chip_SCTPWM_SetOutPin(SCT_PWM, pin, indice);
-			Chip_SCTPWM_SetDutyCycle(SCT_PWM, pin, Chip_SCTPWM_PercentageToTicks(SCT_PWM, percent));
+			Chip_SCTPWM_SetDutyCycle(SCT_PWM, pin, Chip_SCTPWM_PercentageToTicks(SCT_PWM, percent)); //Porcentaje a ticks y cargamos valor requerido.
 			ok = 1;
 		}
 	}
@@ -143,9 +144,9 @@ bool analogWriteUS ( uint8_t pin, int value )
 	float percent;
 	long period;
 
-	period = (1 / freq)*1000000;
+	period = (1 / freq)*1000000; //Calculamos el periodo en uS al que esta trabajando el PWM.
 
-	percent = value * 100.00 / period;
+	percent = value * 100.00 / period; //Calculamos el dutty
 
 		if ( pin == 4 || pin == 7 || pin == 12 || pin == 13 || pin == 14 || pin == 29 || pin == 31 || pin == 32 || pin == 33 || pin == 34 || pin == 35 || pin == 39 || pin == 40 || pin == 41 )
 		{

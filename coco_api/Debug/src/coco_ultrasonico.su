@@ -1,0 +1,13 @@
+core_cm4.h:1467:22:void NVIC_EnableIRQ(IRQn_Type)	16	static
+core_cm4.h:1520:22:void NVIC_ClearPendingIRQ(IRQn_Type)	16	static
+scu_18xx_43xx.h:185:20:void Chip_SCU_GPIOIntPinSel(uint8_t, uint8_t, uint8_t)	24	static
+rgu_18xx_43xx.h:119:20:void Chip_RGU_TriggerReset(CHIP_RGU_RST_T)	16	static
+rgu_18xx_43xx.h:130:20:bool Chip_RGU_InReset(CHIP_RGU_RST_T)	16	static
+pinint_18xx_43xx.h:95:20:void Chip_PININT_SetPinModeEdge(LPC_PIN_INT_T*, uint32_t)	16	static
+pinint_18xx_43xx.h:130:20:void Chip_PININT_EnableIntHigh(LPC_PIN_INT_T*, uint32_t)	16	static
+pinint_18xx_43xx.h:165:20:void Chip_PININT_EnableIntLow(LPC_PIN_INT_T*, uint32_t)	16	static
+pinint_18xx_43xx.h:239:20:void Chip_PININT_ClearIntStatus(LPC_PIN_INT_T*, uint32_t)	16	static
+timer_18xx_43xx.h:181:24:uint32_t Chip_TIMER_ReadCount(LPC_TIMER_T*)	16	static
+coco_ultrasonico.cpp:13:1:ultrasonic::ultrasonic(uint8_t, uint8_t)	24	static
+coco_ultrasonico.cpp:46:10:uint16_t ultrasonic::measureUltrasonic()	16	static
+coco_ultrasonico.cpp:64:7:void GPIO0_IRQHandler()	8	static

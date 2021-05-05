@@ -7,7 +7,7 @@ uart_18xx_43xx.h:512:24:uint32_t Chip_UART_ReadLineStatus(LPC_USART_T*)	16	stati
 coco_uart.cpp:27:6:void uart0::begin(uint32_t)	16	static
 coco_uart.cpp:49:6:bool uart0::available()	120	static
 coco_uart.cpp:89:6:void uart0::write(const char*)	16	static
-coco_uart.cpp:119:6:void uart0::write(int)	64	dynamic
+coco_uart.cpp:109:6:void uart0::write(int)	64	dynamic
 coco_uart.cpp:198:6:void uart0::write(char)	16	static
 coco_uart.cpp:215:12:const char uart0::read()	16	static
 coco_uart.cpp:231:8:char* uart0::readString()	16	static

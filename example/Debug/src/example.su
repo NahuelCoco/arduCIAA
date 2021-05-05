@@ -1,8 +1,0 @@
-coco_aux.h:10:6:void my_reverse(char*, int)	32	static
-coco_aux.h:21:7:char* my_itoa(int, char*, int)	40	static
-coco_aux.h:58:6:long int map(long int, long int, long int, long int, long int)	24	static
-coco_wire.h:15:7:Wire::Wire()	16	static
-coco.h:48:6:void _coco()	8	static
-example.cpp:4:5:int main()	8	static
-example.cpp:20:1:void __static_initialization_and_destruction_0(int, int)	16	static
-example.cpp:20:1:cpp)	8	static

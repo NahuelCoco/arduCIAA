@@ -1,0 +1,7 @@
+coco_wire.h:15:7:Wire::Wire()	16	static
+coco_bmp280.cpp:19:6:void BMP280::WriteReg(uint8_t, uint8_t)	24	static
+coco_bmp280.cpp:41:9:uint8_t BMP280::ReadReg(uint8_t, uint8_t)	24	static
+coco_bmp280.cpp:61:6:void BMP280::begin()	104	static
+coco_bmp280.cpp:205:6:void BMP280::getMeasurements(float*, float*, float*)	96	static
+coco_bmp280.cpp:315:1:void __static_initialization_and_destruction_0(int, int)	16	static
+coco_bmp280.cpp:315:1:cpp)	8	static

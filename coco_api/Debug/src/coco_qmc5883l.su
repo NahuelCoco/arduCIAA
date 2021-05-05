@@ -1,0 +1,11 @@
+cmath:184:3:constexpr float std::cos(float)	16	static
+cmath:425:3:constexpr float std::sin(float)	16	static
+coco_wire.h:15:7:Wire::Wire()	16	static
+coco_qmc5883l.cpp:20:6:void QMC5883L::WriteReg(uint8_t, uint8_t)	24	static
+coco_qmc5883l.cpp:42:9:uint8_t QMC5883L::ReadReg(uint8_t, uint8_t)	24	static
+coco_qmc5883l.cpp:64:1:QMC5883L::QMC5883L(uint8_t, int16_t*, int16_t*, int16_t*, float*)	24	static
+coco_qmc5883l.cpp:97:6:void QMC5883L::CalibrateMag()	80	static
+coco_qmc5883l.cpp:163:6:void QMC5883L::ReadMag()	32	static
+coco_qmc5883l.cpp:198:6:void QMC5883L::ComputeMag(float, float)	56	static
+coco_qmc5883l.cpp:228:1:void __static_initialization_and_destruction_0(int, int)	16	static
+coco_qmc5883l.cpp:228:1:cpp)	8	static

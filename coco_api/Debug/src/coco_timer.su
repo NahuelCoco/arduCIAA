@@ -8,8 +8,8 @@ timer_18xx_43xx.h:217:20:void Chip_TIMER_SetMatch(LPC_TIMER_T*, int8_t, uint32_t
 timer_18xx_43xx.h:248:20:void Chip_TIMER_MatchEnableInt(LPC_TIMER_T*, int8_t)	16	static
 timer_18xx_43xx.h:270:20:void Chip_TIMER_ResetOnMatchEnable(LPC_TIMER_T*, int8_t)	16	static
 coco_timer.cpp:18:6:void initTimer()	8	static
-coco_timer.cpp:45:6:bool delay(long int)	24	static
-coco_timer.cpp:81:6:bool delayMicroseconds(long int)	24	static
-coco_timer.cpp:117:13:long double millis()	4	static
-coco_timer.cpp:136:7:void TIMER0_IRQHandler()	8	static
-coco_timer.cpp:160:7:void TIMER1_IRQHandler()	8	static
+coco_timer.cpp:48:6:bool delay(long int)	24	static
+coco_timer.cpp:84:6:bool delayMicroseconds(long int)	24	static
+coco_timer.cpp:120:13:long double millis()	4	static
+coco_timer.cpp:139:7:void TIMER0_IRQHandler()	8	static
+coco_timer.cpp:163:7:void TIMER1_IRQHandler()	8	static

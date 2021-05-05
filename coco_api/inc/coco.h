@@ -1,6 +1,7 @@
 #ifndef __COCO_H_
 #define __COCO_H_
 
+
 #include "chip.h"
 #include "coco_adc.h"
 #include "coco_aux.h"
@@ -11,8 +12,8 @@
 #include "coco_wire.h"
 #include "coco_spi.h"
 #include "coco_mpu6050.h"
-#include "coco_ak8963.h"
-
+#include "coco_qmc5883l.h"
+#include "coco_bmp280.h"
 #include "stdio.h"
 #include "string.h"
 #include "stdlib.h"
@@ -49,7 +50,7 @@ void _coco ( void )
 	SystemCoreClockUpdate();
 
 	initTimer(); //Inicializo Timer
-    adc_init(0); // Inicializo el ADC con el uso del ADC0
+    //adc_init(0); // Inicializo el ADC con el uso del ADC0
     pwm_init(); //Inicializo el SCT para PWM.
 
 }

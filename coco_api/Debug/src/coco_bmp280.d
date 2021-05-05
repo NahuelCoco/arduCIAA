@@ -1,5 +1,5 @@
-src/coco_pwm.o src/coco_pwm.d: ../src/coco_pwm.cpp \
- C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_pwm.h \
+src/coco_bmp280.o src/coco_bmp280.d: ../src/coco_bmp280.cpp \
+ C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_bmp280.h \
  C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/chip.h \
  C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/sys_config.h \
  C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/cmsis.h \
@@ -61,9 +61,10 @@ src/coco_pwm.o src/coco_pwm.d: ../src/coco_pwm.cpp \
  C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/error.h \
  C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/i2cm_18xx_43xx.h \
  C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/fpu_init.h \
- C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_gpio.h
+ C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_wire.h \
+ C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_wire.h
 
-C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_pwm.h:
+C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_bmp280.h:
 
 C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/chip.h:
 
@@ -187,4 +188,6 @@ C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/i2cm_18xx_43xx.h:
 
 C:\FlightComputer\proyecto-td3\2-Codigo\lpc_chip_43xx\inc/fpu_init.h:
 
-C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_gpio.h:
+C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_wire.h:
+
+C:\FlightComputer\proyecto-td3\2-Codigo\coco_api\inc/coco_wire.h:

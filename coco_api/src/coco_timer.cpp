@@ -2,7 +2,7 @@
 #include "coco_gpio.h"
 
 bool flagTimer = false;
-double long globalClock = 0;
+double long globalClockMS = 0;
 
 /*
  * Función:			void initTimer ( void )
@@ -22,6 +22,9 @@ void initTimer ( void )
 
 	Chip_TIMER_Init(LPC_TIMER1);
 	Chip_TIMER_Reset(LPC_TIMER1);
+
+	Chip_TIMER_Init(LPC_TIMER2);
+	Chip_TIMER_Reset(LPC_TIMER2);
 
 	Chip_TIMER_SetMatch(LPC_TIMER1, 0, (SystemCoreClock/TICKRATE_HZ_MS));
 	Chip_TIMER_MatchEnableInt(LPC_TIMER1, 0);
@@ -116,7 +119,7 @@ bool delayMicroseconds ( long timeUS )
 
 double long millis ( void )
 {
-	return globalClock;
+	return globalClockMS;
 }
 
 extern "C"
@@ -149,7 +152,7 @@ extern "C"
 /*
 * Función:			void TIMER1_IRQHandler(void)
 *
-* Uso:				Se utilizará para aumentar en 1 cada 1 mS a globalClock.
+* Uso:				Se utilizará para aumentar en 1 cada 1 mS a globalClockMS.
 *
 * Return:			No retorna parámetro.
 *
@@ -164,10 +167,9 @@ extern "C"
 		{
 
 			Chip_TIMER_ClearMatch(LPC_TIMER1, 0);
-			globalClock++;
+			globalClockMS++;
 		}
 
 	}
-
 
 }

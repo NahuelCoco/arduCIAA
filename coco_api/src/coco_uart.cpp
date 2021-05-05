@@ -50,7 +50,7 @@ bool uart0::available ( void )
 {
 	int cont = 0; //Variable auxiliar de contador
 	char aux[100]; //Reservo 8 bytes * 100
-	if(Chip_UART_ReadLineStatus(LPC_USART0) & UART_LSR_RDR)
+	if(Chip_UART_ReadLineStatus(LPC_USART0) & UART_LSR_RDR) //Pregunto si hay dato en el buffer
 	{
 		for (cont = 0; cont < 100; cont++)
 		{
@@ -91,19 +91,9 @@ void uart0::write ( const char *word )
 	while( *word != '\0' ) //Detecto el fin de la palabra
 	{
 		while ( !(Chip_UART_ReadLineStatus(LPC_USART0) & UART_LSR_THRE));
-		Chip_UART_SendByte(LPC_USART0, (uint8_t) *word++);
+		Chip_UART_SendByte(LPC_USART0, (uint8_t) *word++); //Envio de a 1 byte
 	}
 }
-/*
- * Función:			void uart0::write ( char c )
- *
- * Uso:				Con esta función podremos enviar 1 byte por el UART0.
- *
- * Return:			No devuelve ningún parámetro.
- *
- * Parámetros:		-word: Byte que se desea enviar.
- *
- */
 
 /*
  * Función:			void uart0::write ( int number )
@@ -123,39 +113,39 @@ void uart0::write( int number )
 	int div=1;
 	char i=0;
 	char j=0;
-	if (number >= 0)
+	if (number >= 0) //Si es un numero positivo
 	{
 		aux = number;
 		while(aux)
 		{
-			aux = aux / 10;
-			div = div*10;
-			i++;
+			aux = aux / 10; //Divido el numero por diez
+			div = div*10; //Multiplico a div por diez
+			i++; //Aumento en 1 a i
 		}
 		i++;
-		char arrayNumbers[i];
+		char arrayNumbers[i]; //Consigo la cantidad de numeros que conforman a "number" y creo un vector
 
-		i--;
-		j=i;
-		i=0;
-		while(div>1)
+		i--;  //Resto 1 para la cuenta
+		j=i; //Almaceno la cuenta en j
+		i=0; //Reset a i
+		while(div>1) //Si todavia tengo que seguir dividiendo, lo hago
 		{
 			div = div/10;
-			arrayNumbers[i] = (number / div) + 48;
+			arrayNumbers[i] = (number / div) + 48; //El 48 en decimal es el 0
 			number = number % div;
 			i++;
 		}
 
-		arrayNumbers[i]='\0';
+		arrayNumbers[i]='\0'; //Agrego en la última posición un fin de array
 		const char *word = arrayNumbers;
 
-		while( *word != '\0' ) //Detecto el fin de la palabra
+		while( *word != '\0' ) //Detecto el fin de la palabra mientras envio
 			{
 				while ( !(Chip_UART_ReadLineStatus(LPC_USART0) & UART_LSR_THRE));
 				Chip_UART_SendByte(LPC_USART0, (uint8_t) *word++);
 			}
 	}
-	else
+	else //Si es negativo el mismo proceso pero se agrega un (-)
 	{
 		i = 1;
 		j = 1;
@@ -194,6 +184,16 @@ void uart0::write( int number )
 
 }
 
+/*
+ * Función:			void uart0::write ( char c )
+ *
+ * Uso:				Con esta función podremos enviar 1 byte por el UART0.
+ *
+ * Return:			No devuelve ningún parámetro.
+ *
+ * Parámetros:		-word: Byte que se desea enviar.
+ *
+ */
 
 void uart0::write ( char c )
 {

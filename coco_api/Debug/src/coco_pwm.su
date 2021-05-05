@@ -9,7 +9,7 @@ sct_pwm_18xx_43xx.h:103:20:void Chip_SCTPWM_SetDutyCycle(LPC_SCT_T*, uint8_t, ui
 sct_pwm_18xx_43xx.h:113:20:void Chip_SCTPWM_Init(LPC_SCT_T*)	16	static
 sct_pwm_18xx_43xx.h:129:20:void Chip_SCTPWM_Start(LPC_SCT_T*)	16	static
 sct_pwm_18xx_43xx.h:139:20:void Chip_SCTPWM_Stop(LPC_SCT_T*)	16	static
-coco_pwm.cpp:16:6:void pwm_init()	8	static
-coco_pwm.cpp:34:6:void pwm_changeFrec(long int)	16	static
-coco_pwm.cpp:58:6:bool analogWrite(uint8_t, uint8_t)	32	static
-coco_pwm.cpp:137:6:bool analogWriteUS(uint8_t, int)	48	static
+coco_pwm.cpp:18:6:void pwm_init()	8	static
+coco_pwm.cpp:36:6:void pwm_changeFrec(long int)	16	static
+coco_pwm.cpp:60:6:bool analogWrite(uint8_t, uint8_t)	32	static
+coco_pwm.cpp:140:6:bool analogWriteUS(uint8_t, int)	48	static

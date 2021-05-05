@@ -195,7 +195,7 @@ static const struct digital_t digitalPins[] =
 	{6,	12,		2,	 8,	FUNC0}, //GPIO8
 	{6,	11,		3,	 7,	FUNC0}, //GPIO7
 	{6,	9,		3,	 5,	FUNC0}, //GPIO5
-	{6,	7,		5,	15,	FUNC0}, //GPIO3
+	{6,	7,		5,	15,	FUNC4}, //GPIO3
 	{6,	4,		3,	 3,	FUNC0}, //GPIO1
 	{4,	4,		2,	 4,	FUNC0}, //LCD1
 	{4,	5,		2,	 5,	FUNC0}, //LCD2
